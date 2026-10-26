@@ -1,0 +1,792 @@
+{
+  "date": "2026-10-26",
+  "python": "3.12.3",
+  "trials_per_condition": 1,
+  "model": "Same inherited model/settings; exact runtime identifiers not recorded",
+  "files_sha256": {
+    "skills/design-tests/SKILL.md": "271c9f7db16dc320239232b36ce47b16ff3db864ac6e1860e9552a5164e51f8b",
+    "skills/design-tests/agents/openai.yaml": "616b4c6a220b64c244a6644192e964d0d5d2f5642de249ecf93dabcaca03ef94",
+    "skills/design-tests/references/bdd-and-test-design.md": "e1f154c03af3a54ae3ffa8aeec64fbb5f86c3f1814bb673e8484fb97c64f55b0",
+    "skills/design-tests/references/data-ml.md": "3a16db9f2b48860e50669e5fee696502fe0c6f37881ec7856eb3756417aeb4cd",
+    "skills/design-tests/references/interviews.md": "74c4b945eb7f9dff78503e9a0f0ed7aa5a04ba7c3a4fe8a11206e52daf15e254",
+    "skills/design-tests/references/stateful-api.md": "b660806ef1eaba01478d59689af59f50e3278a7ffce8c2fa51e9091adad4ad88",
+    "skills/design-tests/references/test-quality.md": "1a3b33a71f035dad9613c5d9e103408d9dd972d82cea35ec2ace6fc4c5655861",
+    "skills/design-tests/references/ui.md": "baf0d565ca55489b93ca6faf96e64c6e17c2664c2b4347d74379a3cbc4ba027b",
+    "evals/ledger/contract.md": "4d4a7572e13110df2128f01095d1ced1d42e8c6332164e51094d34dced3eb598",
+    "evals/ledger/grade.py": "510a062986c3e0145901ae9ff94791d3077995ddebbb5a92122d2c2d905dc2a2",
+    "evals/ledger/suites/baseline.py": "aa1061b3a6b2aeef72b94fa6fb71ed47bcaded2a3418fdd1eeab25ab0155568e",
+    "evals/ledger/suites/skill.py": "f387a2112f7befc6deed1461d404c4806dc2aa1ed65815306ad453e7733dca28"
+  },
+  "conditions": {
+    "baseline": {
+      "baseline_valid": true,
+      "correct_implementations": {
+        "reference": {
+          "tests_run": 12,
+          "failures": [],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": true,
+          "status": "completed"
+        },
+        "alternative": {
+          "tests_run": 12,
+          "failures": [],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": true,
+          "status": "completed"
+        }
+      },
+      "assertion_detected": 15,
+      "mutation_count": 17,
+      "manually_confirmed_additional": 2,
+      "total_detected_after_review": 17,
+      "mutations": {
+        "exclusive_start": {
+          "tests_run": 12,
+          "failures": [
+            "test_half_open_window_and_signed_totals (test_ledger.AggregateTests.test_half_open_window_and_signed_totals)"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "inclusive_end": {
+          "tests_run": 12,
+          "failures": [
+            "test_empty_input_and_empty_window (test_ledger.AggregateTests.test_empty_input_and_empty_window)",
+            "test_half_open_window_and_signed_totals (test_ledger.AggregateTests.test_half_open_window_and_signed_totals)"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "no_dedup": {
+          "tests_run": 12,
+          "failures": [
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(0, 3), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(0, 3), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(1, 2), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(1, 2), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(3, 4), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(3, 4), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(1, 1), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(1, 1), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'kind': 'refund'}, window=(0, 3), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'kind': 'refund'}, window=(0, 3), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'kind': 'refund'}, window=(1, 2), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'kind': 'refund'}, window=(1, 2), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'kind': 'refund'}, window=(3, 4), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'kind': 'refund'}, window=(3, 4), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'kind': 'refund'}, window=(1, 1), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'kind': 'refund'}, window=(1, 1), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'amount': 101}, window=(0, 3), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'amount': 101}, window=(0, 3), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'amount': 101}, window=(1, 2), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'amount': 101}, window=(1, 2), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'amount': 101}, window=(3, 4), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'amount': 101}, window=(3, 4), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'amount': 101}, window=(1, 1), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'amount': 101}, window=(1, 1), reverse=True)",
+            "test_duplicates_extra_fields_and_tenant_scoped_identity (test_ledger.AggregateTests.test_duplicates_extra_fields_and_tenant_scoped_identity) (order=[{'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'beta', 'event_id': 'one', 'at': 1, 'kind': 'refund', 'amount': 40}, {'tenant': 'alpha', 'event_id': 'two', 'at': 1, 'kind': 'sale', 'amount': 25}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [3]}, 'ignored': False}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}])",
+            "test_duplicates_extra_fields_and_tenant_scoped_identity (test_ledger.AggregateTests.test_duplicates_extra_fields_and_tenant_scoped_identity) (order=[{'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [3]}, 'ignored': False}, {'tenant': 'alpha', 'event_id': 'two', 'at': 1, 'kind': 'sale', 'amount': 25}, {'tenant': 'beta', 'event_id': 'one', 'at': 1, 'kind': 'refund', 'amount': 40}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}])",
+            "test_duplicates_extra_fields_and_tenant_scoped_identity (test_ledger.AggregateTests.test_duplicates_extra_fields_and_tenant_scoped_identity) (order=[{'tenant': 'alpha', 'event_id': 'two', 'at': 1, 'kind': 'sale', 'amount': 25}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [3]}, 'ignored': False}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'beta', 'event_id': 'one', 'at': 1, 'kind': 'refund', 'amount': 40}])",
+            "test_success_preserves_input_list_and_dictionaries (test_ledger.AggregateTests.test_success_preserves_input_list_and_dictionaries)",
+            "test_validation_failure_preserves_input (test_ledger.AggregateTests.test_validation_failure_preserves_input) (records=[{'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 101}], window=(0, 3))"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "global_identity": {
+          "tests_run": 12,
+          "failures": [],
+          "errors": [
+            "test_duplicates_extra_fields_and_tenant_scoped_identity (test_ledger.AggregateTests.test_duplicates_extra_fields_and_tenant_scoped_identity) (order=[{'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'beta', 'event_id': 'one', 'at': 1, 'kind': 'refund', 'amount': 40}, {'tenant': 'alpha', 'event_id': 'two', 'at': 1, 'kind': 'sale', 'amount': 25}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [3]}, 'ignored': False}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}])",
+            "test_duplicates_extra_fields_and_tenant_scoped_identity (test_ledger.AggregateTests.test_duplicates_extra_fields_and_tenant_scoped_identity) (order=[{'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [3]}, 'ignored': False}, {'tenant': 'alpha', 'event_id': 'two', 'at': 1, 'kind': 'sale', 'amount': 25}, {'tenant': 'beta', 'event_id': 'one', 'at': 1, 'kind': 'refund', 'amount': 40}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}])",
+            "test_duplicates_extra_fields_and_tenant_scoped_identity (test_ledger.AggregateTests.test_duplicates_extra_fields_and_tenant_scoped_identity) (order=[{'tenant': 'alpha', 'event_id': 'two', 'at': 1, 'kind': 'sale', 'amount': 25}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [3]}, 'ignored': False}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'beta', 'event_id': 'one', 'at': 1, 'kind': 'refund', 'amount': 40}])",
+            "test_half_open_window_and_signed_totals (test_ledger.AggregateTests.test_half_open_window_and_signed_totals)"
+          ],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": false,
+          "manual_review": "ValueError raised on valid input that must return a dictionary; behavioral contract violation."
+        },
+        "refund_positive": {
+          "tests_run": 12,
+          "failures": [
+            "test_duplicates_extra_fields_and_tenant_scoped_identity (test_ledger.AggregateTests.test_duplicates_extra_fields_and_tenant_scoped_identity) (order=[{'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'beta', 'event_id': 'one', 'at': 1, 'kind': 'refund', 'amount': 40}, {'tenant': 'alpha', 'event_id': 'two', 'at': 1, 'kind': 'sale', 'amount': 25}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [3]}, 'ignored': False}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}])",
+            "test_duplicates_extra_fields_and_tenant_scoped_identity (test_ledger.AggregateTests.test_duplicates_extra_fields_and_tenant_scoped_identity) (order=[{'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [3]}, 'ignored': False}, {'tenant': 'alpha', 'event_id': 'two', 'at': 1, 'kind': 'sale', 'amount': 25}, {'tenant': 'beta', 'event_id': 'one', 'at': 1, 'kind': 'refund', 'amount': 40}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}])",
+            "test_duplicates_extra_fields_and_tenant_scoped_identity (test_ledger.AggregateTests.test_duplicates_extra_fields_and_tenant_scoped_identity) (order=[{'tenant': 'alpha', 'event_id': 'two', 'at': 1, 'kind': 'sale', 'amount': 25}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [3]}, 'ignored': False}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'beta', 'event_id': 'one', 'at': 1, 'kind': 'refund', 'amount': 40}])",
+            "test_half_open_window_and_signed_totals (test_ledger.AggregateTests.test_half_open_window_and_signed_totals)"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "drop_zero": {
+          "tests_run": 12,
+          "failures": [
+            "test_half_open_window_and_signed_totals (test_ledger.AggregateTests.test_half_open_window_and_signed_totals)"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "absolute_total": {
+          "tests_run": 12,
+          "failures": [
+            "test_duplicates_extra_fields_and_tenant_scoped_identity (test_ledger.AggregateTests.test_duplicates_extra_fields_and_tenant_scoped_identity) (order=[{'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'beta', 'event_id': 'one', 'at': 1, 'kind': 'refund', 'amount': 40}, {'tenant': 'alpha', 'event_id': 'two', 'at': 1, 'kind': 'sale', 'amount': 25}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [3]}, 'ignored': False}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}])",
+            "test_duplicates_extra_fields_and_tenant_scoped_identity (test_ledger.AggregateTests.test_duplicates_extra_fields_and_tenant_scoped_identity) (order=[{'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [3]}, 'ignored': False}, {'tenant': 'alpha', 'event_id': 'two', 'at': 1, 'kind': 'sale', 'amount': 25}, {'tenant': 'beta', 'event_id': 'one', 'at': 1, 'kind': 'refund', 'amount': 40}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}])",
+            "test_duplicates_extra_fields_and_tenant_scoped_identity (test_ledger.AggregateTests.test_duplicates_extra_fields_and_tenant_scoped_identity) (order=[{'tenant': 'alpha', 'event_id': 'two', 'at': 1, 'kind': 'sale', 'amount': 25}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [3]}, 'ignored': False}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'beta', 'event_id': 'one', 'at': 1, 'kind': 'refund', 'amount': 40}])",
+            "test_half_open_window_and_signed_totals (test_ledger.AggregateTests.test_half_open_window_and_signed_totals)"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "ignore_conflict": {
+          "tests_run": 12,
+          "failures": [
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(0, 3), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(0, 3), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(1, 2), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(1, 2), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(3, 4), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(3, 4), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(1, 1), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(1, 1), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'kind': 'refund'}, window=(0, 3), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'kind': 'refund'}, window=(0, 3), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'kind': 'refund'}, window=(1, 2), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'kind': 'refund'}, window=(1, 2), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'kind': 'refund'}, window=(3, 4), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'kind': 'refund'}, window=(3, 4), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'kind': 'refund'}, window=(1, 1), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'kind': 'refund'}, window=(1, 1), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'amount': 101}, window=(0, 3), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'amount': 101}, window=(0, 3), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'amount': 101}, window=(1, 2), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'amount': 101}, window=(1, 2), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'amount': 101}, window=(3, 4), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'amount': 101}, window=(3, 4), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'amount': 101}, window=(1, 1), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'amount': 101}, window=(1, 1), reverse=True)",
+            "test_validation_failure_preserves_input (test_ledger.AggregateTests.test_validation_failure_preserves_input) (records=[{'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 101}], window=(0, 3))"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "ignore_invalid_outside": {
+          "tests_run": 12,
+          "failures": [
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(1, 2), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(1, 2), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(3, 4), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(3, 4), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(1, 1), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'at': 2}, window=(1, 1), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'kind': 'refund'}, window=(3, 4), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'kind': 'refund'}, window=(3, 4), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'kind': 'refund'}, window=(1, 1), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'kind': 'refund'}, window=(1, 1), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'amount': 101}, window=(3, 4), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'amount': 101}, window=(3, 4), reverse=True)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'amount': 101}, window=(1, 1), reverse=False)",
+            "test_conflicts_are_checked_globally_in_either_order (test_ledger.AggregateTests.test_conflicts_are_checked_globally_in_either_order) (changes={'amount': 101}, window=(1, 1), reverse=True)",
+            "test_invalid_records_are_checked_outside_and_in_empty_window (test_ledger.AggregateTests.test_invalid_records_are_checked_outside_and_in_empty_window) (record={'tenant': 'alpha', 'event_id': 'bad', 'at': 9, 'kind': 'sale', 'amount': 0}, window=(0, 2))",
+            "test_invalid_records_are_checked_outside_and_in_empty_window (test_ledger.AggregateTests.test_invalid_records_are_checked_outside_and_in_empty_window) (record={'tenant': 'alpha', 'event_id': 'bad', 'at': 9, 'kind': 'sale', 'amount': 0}, window=(1, 1))",
+            "test_invalid_records_are_checked_outside_and_in_empty_window (test_ledger.AggregateTests.test_invalid_records_are_checked_outside_and_in_empty_window) (record={'event_id': 'bad', 'at': 9, 'kind': 'sale', 'amount': 100}, window=(0, 2))",
+            "test_invalid_records_are_checked_outside_and_in_empty_window (test_ledger.AggregateTests.test_invalid_records_are_checked_outside_and_in_empty_window) (record={'event_id': 'bad', 'at': 9, 'kind': 'sale', 'amount': 100}, window=(1, 1))"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "mutate_input": {
+          "tests_run": 12,
+          "failures": [
+            "test_success_preserves_input_list_and_dictionaries (test_ledger.AggregateTests.test_success_preserves_input_list_and_dictionaries)",
+            "test_validation_failure_preserves_input (test_ledger.AggregateTests.test_validation_failure_preserves_input) (records=[{'tenant': 'alpha', 'event_id': 'bad', 'at': 1, 'kind': 'sale', 'amount': 0}, {'tenant': 'alpha', 'event_id': 'one', 'at': 2, 'kind': 'sale', 'amount': 100}], window=(0, 3))",
+            "test_validation_failure_preserves_input (test_ledger.AggregateTests.test_validation_failure_preserves_input) (records=[{'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 101}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}], window=(0, 3))"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "boolean_amount": {
+          "tests_run": 12,
+          "failures": [
+            "test_invalid_required_field_values (test_ledger.AggregateTests.test_invalid_required_field_values) (field='amount', value=True)"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "zero_amount": {
+          "tests_run": 12,
+          "failures": [
+            "test_invalid_records_are_checked_outside_and_in_empty_window (test_ledger.AggregateTests.test_invalid_records_are_checked_outside_and_in_empty_window) (record={'tenant': 'alpha', 'event_id': 'bad', 'at': 9, 'kind': 'sale', 'amount': 0}, window=(0, 2))",
+            "test_invalid_records_are_checked_outside_and_in_empty_window (test_ledger.AggregateTests.test_invalid_records_are_checked_outside_and_in_empty_window) (record={'tenant': 'alpha', 'event_id': 'bad', 'at': 9, 'kind': 'sale', 'amount': 0}, window=(1, 1))",
+            "test_invalid_required_field_values (test_ledger.AggregateTests.test_invalid_required_field_values) (field='amount', value=0)",
+            "test_validation_failure_preserves_input (test_ledger.AggregateTests.test_validation_failure_preserves_input) (records=[{'tenant': 'alpha', 'event_id': 'one', 'at': 2, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'bad', 'at': 1, 'kind': 'sale', 'amount': 0}], window=(0, 3))"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "negative_amount": {
+          "tests_run": 12,
+          "failures": [
+            "test_invalid_required_field_values (test_ledger.AggregateTests.test_invalid_required_field_values) (field='amount', value=-1)"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "invalid_window": {
+          "tests_run": 12,
+          "failures": [
+            "test_invalid_window_values (test_ledger.AggregateTests.test_invalid_window_values) (start=True, end=10)",
+            "test_invalid_window_values (test_ledger.AggregateTests.test_invalid_window_values) (start=-10, end=True)",
+            "test_invalid_window_values (test_ledger.AggregateTests.test_invalid_window_values) (start=False, end=10)",
+            "test_invalid_window_values (test_ledger.AggregateTests.test_invalid_window_values) (start=-10, end=False)",
+            "test_invalid_window_values (test_ledger.AggregateTests.test_invalid_window_values) (start=1.5, end=10)",
+            "test_invalid_window_values (test_ledger.AggregateTests.test_invalid_window_values) (start=-10, end=1.5)",
+            "test_invalid_window_values (test_ledger.AggregateTests.test_invalid_window_values) (start='1', end=10)",
+            "test_invalid_window_values (test_ledger.AggregateTests.test_invalid_window_values) (start=-10, end='1')",
+            "test_invalid_window_values (test_ledger.AggregateTests.test_invalid_window_values) (start=None, end=10)",
+            "test_invalid_window_values (test_ledger.AggregateTests.test_invalid_window_values) (start=-10, end=None)",
+            "test_invalid_window_values (test_ledger.AggregateTests.test_invalid_window_values)",
+            "test_validation_failure_preserves_input (test_ledger.AggregateTests.test_validation_failure_preserves_input) (records=[{'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}], window=(3, 0))"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "merge_tenants": {
+          "tests_run": 12,
+          "failures": [
+            "test_calls_are_independent_and_results_are_new_dictionaries (test_ledger.AggregateTests.test_calls_are_independent_and_results_are_new_dictionaries)",
+            "test_duplicates_extra_fields_and_tenant_scoped_identity (test_ledger.AggregateTests.test_duplicates_extra_fields_and_tenant_scoped_identity) (order=[{'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'beta', 'event_id': 'one', 'at': 1, 'kind': 'refund', 'amount': 40}, {'tenant': 'alpha', 'event_id': 'two', 'at': 1, 'kind': 'sale', 'amount': 25}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [3]}, 'ignored': False}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}])",
+            "test_duplicates_extra_fields_and_tenant_scoped_identity (test_ledger.AggregateTests.test_duplicates_extra_fields_and_tenant_scoped_identity) (order=[{'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [3]}, 'ignored': False}, {'tenant': 'alpha', 'event_id': 'two', 'at': 1, 'kind': 'sale', 'amount': 25}, {'tenant': 'beta', 'event_id': 'one', 'at': 1, 'kind': 'refund', 'amount': 40}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}])",
+            "test_duplicates_extra_fields_and_tenant_scoped_identity (test_ledger.AggregateTests.test_duplicates_extra_fields_and_tenant_scoped_identity) (order=[{'tenant': 'alpha', 'event_id': 'two', 'at': 1, 'kind': 'sale', 'amount': 25}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [3]}, 'ignored': False}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'beta', 'event_id': 'one', 'at': 1, 'kind': 'refund', 'amount': 40}])",
+            "test_half_open_window_and_signed_totals (test_ledger.AggregateTests.test_half_open_window_and_signed_totals)",
+            "test_nonempty_identifiers_are_not_trimmed (test_ledger.AggregateTests.test_nonempty_identifiers_are_not_trimmed)",
+            "test_success_preserves_input_list_and_dictionaries (test_ledger.AggregateTests.test_success_preserves_input_list_and_dictionaries)"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "extra_fields_identity": {
+          "tests_run": 12,
+          "failures": [],
+          "errors": [
+            "test_duplicates_extra_fields_and_tenant_scoped_identity (test_ledger.AggregateTests.test_duplicates_extra_fields_and_tenant_scoped_identity) (order=[{'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'beta', 'event_id': 'one', 'at': 1, 'kind': 'refund', 'amount': 40}, {'tenant': 'alpha', 'event_id': 'two', 'at': 1, 'kind': 'sale', 'amount': 25}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [3]}, 'ignored': False}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}])",
+            "test_duplicates_extra_fields_and_tenant_scoped_identity (test_ledger.AggregateTests.test_duplicates_extra_fields_and_tenant_scoped_identity) (order=[{'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [3]}, 'ignored': False}, {'tenant': 'alpha', 'event_id': 'two', 'at': 1, 'kind': 'sale', 'amount': 25}, {'tenant': 'beta', 'event_id': 'one', 'at': 1, 'kind': 'refund', 'amount': 40}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}])",
+            "test_duplicates_extra_fields_and_tenant_scoped_identity (test_ledger.AggregateTests.test_duplicates_extra_fields_and_tenant_scoped_identity) (order=[{'tenant': 'alpha', 'event_id': 'two', 'at': 1, 'kind': 'sale', 'amount': 25}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [3]}, 'ignored': False}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'beta', 'event_id': 'one', 'at': 1, 'kind': 'refund', 'amount': 40}])"
+          ],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": false,
+          "manual_review": "ValueError raised on valid input that must return a dictionary; behavioral contract violation."
+        },
+        "empty_result": {
+          "tests_run": 12,
+          "failures": [
+            "test_calls_are_independent_and_results_are_new_dictionaries (test_ledger.AggregateTests.test_calls_are_independent_and_results_are_new_dictionaries)",
+            "test_duplicates_extra_fields_and_tenant_scoped_identity (test_ledger.AggregateTests.test_duplicates_extra_fields_and_tenant_scoped_identity) (order=[{'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'beta', 'event_id': 'one', 'at': 1, 'kind': 'refund', 'amount': 40}, {'tenant': 'alpha', 'event_id': 'two', 'at': 1, 'kind': 'sale', 'amount': 25}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [3]}, 'ignored': False}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}])",
+            "test_duplicates_extra_fields_and_tenant_scoped_identity (test_ledger.AggregateTests.test_duplicates_extra_fields_and_tenant_scoped_identity) (order=[{'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [3]}, 'ignored': False}, {'tenant': 'alpha', 'event_id': 'two', 'at': 1, 'kind': 'sale', 'amount': 25}, {'tenant': 'beta', 'event_id': 'one', 'at': 1, 'kind': 'refund', 'amount': 40}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}])",
+            "test_duplicates_extra_fields_and_tenant_scoped_identity (test_ledger.AggregateTests.test_duplicates_extra_fields_and_tenant_scoped_identity) (order=[{'tenant': 'alpha', 'event_id': 'two', 'at': 1, 'kind': 'sale', 'amount': 25}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [3]}, 'ignored': False}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'alpha', 'event_id': 'one', 'at': 1, 'kind': 'sale', 'amount': 100, 'source': {'nested': [1, 2]}}, {'tenant': 'beta', 'event_id': 'one', 'at': 1, 'kind': 'refund', 'amount': 40}])",
+            "test_half_open_window_and_signed_totals (test_ledger.AggregateTests.test_half_open_window_and_signed_totals)",
+            "test_nonempty_identifiers_are_not_trimmed (test_ledger.AggregateTests.test_nonempty_identifiers_are_not_trimmed)",
+            "test_success_preserves_input_list_and_dictionaries (test_ledger.AggregateTests.test_success_preserves_input_list_and_dictionaries)"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        }
+      }
+    },
+    "skill": {
+      "baseline_valid": true,
+      "correct_implementations": {
+        "reference": {
+          "tests_run": 11,
+          "failures": [],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": true,
+          "status": "completed"
+        },
+        "alternative": {
+          "tests_run": 11,
+          "failures": [],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": true,
+          "status": "completed"
+        }
+      },
+      "assertion_detected": 15,
+      "mutation_count": 17,
+      "manually_confirmed_additional": 2,
+      "total_detected_after_review": 17,
+      "mutations": {
+        "exclusive_start": {
+          "tests_run": 11,
+          "failures": [
+            "test_half_open_window_with_negative_timestamps (test_ledger.AggregateTests.test_half_open_window_with_negative_timestamps)"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "inclusive_end": {
+          "tests_run": 11,
+          "failures": [
+            "test_empty_input_empty_window_and_no_matching_events (test_ledger.AggregateTests.test_empty_input_empty_window_and_no_matching_events) (records=[{'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 11}], start=4, end=4)",
+            "test_half_open_window_with_negative_timestamps (test_ledger.AggregateTests.test_half_open_window_with_negative_timestamps)"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "no_dedup": {
+          "tests_run": 11,
+          "failures": [
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='amount inside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='amount inside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 12})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='kind inside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='kind inside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'refund', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='timestamp inside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='timestamp inside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 5, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='one outside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='one outside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': -1, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside timestamp', first={'tenant': 'alpha', 'event_id': 'e1', 'at': -2, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside timestamp', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 12, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside amount', first={'tenant': 'alpha', 'event_id': 'e1', 'at': -2, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside amount', first={'tenant': 'alpha', 'event_id': 'e1', 'at': -2, 'kind': 'sale', 'amount': 12})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside kind', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 12, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside kind', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 12, 'kind': 'refund', 'amount': 11})",
+            "test_duplicates_ignore_extra_fields_and_do_not_require_adjacency (test_ledger.AggregateTests.test_duplicates_ignore_extra_fields_and_do_not_require_adjacency) (order=['alpha', 'beta', 'alpha', 'alpha', 'alpha'])",
+            "test_duplicates_ignore_extra_fields_and_do_not_require_adjacency (test_ledger.AggregateTests.test_duplicates_ignore_extra_fields_and_do_not_require_adjacency) (order=['alpha', 'alpha', 'alpha', 'beta', 'alpha'])",
+            "test_empty_window_still_validates_records_and_conflicts (test_ledger.AggregateTests.test_empty_window_still_validates_records_and_conflicts) (records=[{'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 11}, {'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 12}])"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "global_identity": {
+          "tests_run": 11,
+          "failures": [],
+          "errors": [
+            "test_duplicates_ignore_extra_fields_and_do_not_require_adjacency (test_ledger.AggregateTests.test_duplicates_ignore_extra_fields_and_do_not_require_adjacency) (order=['alpha', 'beta', 'alpha', 'alpha', 'alpha'])",
+            "test_duplicates_ignore_extra_fields_and_do_not_require_adjacency (test_ledger.AggregateTests.test_duplicates_ignore_extra_fields_and_do_not_require_adjacency) (order=['alpha', 'alpha', 'alpha', 'beta', 'alpha'])",
+            "test_half_open_window_with_negative_timestamps (test_ledger.AggregateTests.test_half_open_window_with_negative_timestamps)",
+            "test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals (test_ledger.AggregateTests.test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals) (order=[8, 3, 1, 2, 7, 6, 5])",
+            "test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals (test_ledger.AggregateTests.test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals) (order=[5, 6, 7, 2, 1, 3, 8])"
+          ],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": false,
+          "manual_review": "ValueError raised on valid input that must return a dictionary; behavioral contract violation."
+        },
+        "refund_positive": {
+          "tests_run": 11,
+          "failures": [
+            "test_calls_have_no_shared_state_and_return_new_dictionaries (test_ledger.AggregateTests.test_calls_have_no_shared_state_and_return_new_dictionaries)",
+            "test_duplicates_ignore_extra_fields_and_do_not_require_adjacency (test_ledger.AggregateTests.test_duplicates_ignore_extra_fields_and_do_not_require_adjacency) (order=['alpha', 'beta', 'alpha', 'alpha', 'alpha'])",
+            "test_duplicates_ignore_extra_fields_and_do_not_require_adjacency (test_ledger.AggregateTests.test_duplicates_ignore_extra_fields_and_do_not_require_adjacency) (order=['alpha', 'alpha', 'alpha', 'beta', 'alpha'])",
+            "test_half_open_window_with_negative_timestamps (test_ledger.AggregateTests.test_half_open_window_with_negative_timestamps)",
+            "test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals (test_ledger.AggregateTests.test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals) (order=[8, 3, 1, 2, 7, 6, 5])",
+            "test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals (test_ledger.AggregateTests.test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals) (order=[5, 6, 7, 2, 1, 3, 8])"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "drop_zero": {
+          "tests_run": 11,
+          "failures": [
+            "test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals (test_ledger.AggregateTests.test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals) (order=[8, 3, 1, 2, 7, 6, 5])",
+            "test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals (test_ledger.AggregateTests.test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals) (order=[5, 6, 7, 2, 1, 3, 8])"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "absolute_total": {
+          "tests_run": 11,
+          "failures": [
+            "test_calls_have_no_shared_state_and_return_new_dictionaries (test_ledger.AggregateTests.test_calls_have_no_shared_state_and_return_new_dictionaries)",
+            "test_duplicates_ignore_extra_fields_and_do_not_require_adjacency (test_ledger.AggregateTests.test_duplicates_ignore_extra_fields_and_do_not_require_adjacency) (order=['alpha', 'beta', 'alpha', 'alpha', 'alpha'])",
+            "test_duplicates_ignore_extra_fields_and_do_not_require_adjacency (test_ledger.AggregateTests.test_duplicates_ignore_extra_fields_and_do_not_require_adjacency) (order=['alpha', 'alpha', 'alpha', 'beta', 'alpha'])",
+            "test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals (test_ledger.AggregateTests.test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals) (order=[8, 3, 1, 2, 7, 6, 5])",
+            "test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals (test_ledger.AggregateTests.test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals) (order=[5, 6, 7, 2, 1, 3, 8])"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "ignore_conflict": {
+          "tests_run": 11,
+          "failures": [
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='amount inside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='amount inside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 12})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='kind inside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='kind inside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'refund', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='timestamp inside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='timestamp inside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 5, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='one outside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='one outside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': -1, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside timestamp', first={'tenant': 'alpha', 'event_id': 'e1', 'at': -2, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside timestamp', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 12, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside amount', first={'tenant': 'alpha', 'event_id': 'e1', 'at': -2, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside amount', first={'tenant': 'alpha', 'event_id': 'e1', 'at': -2, 'kind': 'sale', 'amount': 12})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside kind', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 12, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside kind', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 12, 'kind': 'refund', 'amount': 11})",
+            "test_empty_window_still_validates_records_and_conflicts (test_ledger.AggregateTests.test_empty_window_still_validates_records_and_conflicts) (records=[{'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 11}, {'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 12}])"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "ignore_invalid_outside": {
+          "tests_run": 11,
+          "failures": [
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='one outside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='one outside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': -1, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside timestamp', first={'tenant': 'alpha', 'event_id': 'e1', 'at': -2, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside timestamp', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 12, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside amount', first={'tenant': 'alpha', 'event_id': 'e1', 'at': -2, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside amount', first={'tenant': 'alpha', 'event_id': 'e1', 'at': -2, 'kind': 'sale', 'amount': 12})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside kind', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 12, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside kind', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 12, 'kind': 'refund', 'amount': 11})",
+            "test_empty_window_still_validates_records_and_conflicts (test_ledger.AggregateTests.test_empty_window_still_validates_records_and_conflicts) (records=[{'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 0}])",
+            "test_empty_window_still_validates_records_and_conflicts (test_ledger.AggregateTests.test_empty_window_still_validates_records_and_conflicts) (records=[{'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 11}, {'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 12}])",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='tenant', value='')",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='tenant', value=None)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='tenant', value=7)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='event_id', value='')",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='event_id', value=None)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='event_id', value=7)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='kind', value='SALE')",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='kind', value='other')",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='kind', value='')",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='kind', value=None)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='kind', value=1)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='amount', value=0)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='amount', value=-1)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='amount', value=True)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='amount', value=False)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='amount', value=11.0)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='amount', value='11')",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='amount', value=None)",
+            "test_missing_required_fields_are_rejected_even_outside_window (test_ledger.AggregateTests.test_missing_required_fields_are_rejected_even_outside_window) (missing='tenant')",
+            "test_missing_required_fields_are_rejected_even_outside_window (test_ledger.AggregateTests.test_missing_required_fields_are_rejected_even_outside_window) (missing='event_id')",
+            "test_missing_required_fields_are_rejected_even_outside_window (test_ledger.AggregateTests.test_missing_required_fields_are_rejected_even_outside_window) (missing='kind')",
+            "test_missing_required_fields_are_rejected_even_outside_window (test_ledger.AggregateTests.test_missing_required_fields_are_rejected_even_outside_window) (missing='amount')"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "mutate_input": {
+          "tests_run": 11,
+          "failures": [
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='amount inside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='amount inside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 12})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='kind inside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='kind inside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'refund', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='timestamp inside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='timestamp inside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 5, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='one outside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='one outside', first={'tenant': 'alpha', 'event_id': 'e1', 'at': -1, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside timestamp', first={'tenant': 'alpha', 'event_id': 'e1', 'at': -2, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside timestamp', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 12, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside amount', first={'tenant': 'alpha', 'event_id': 'e1', 'at': -2, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside amount', first={'tenant': 'alpha', 'event_id': 'e1', 'at': -2, 'kind': 'sale', 'amount': 12})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside kind', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 12, 'kind': 'sale', 'amount': 11})",
+            "test_conflicts_are_global_and_order_independent (test_ledger.AggregateTests.test_conflicts_are_global_and_order_independent) (case='both outside kind', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 12, 'kind': 'refund', 'amount': 11})",
+            "test_duplicates_ignore_extra_fields_and_do_not_require_adjacency (test_ledger.AggregateTests.test_duplicates_ignore_extra_fields_and_do_not_require_adjacency) (order=['alpha', 'beta', 'alpha', 'alpha', 'alpha'])",
+            "test_duplicates_ignore_extra_fields_and_do_not_require_adjacency (test_ledger.AggregateTests.test_duplicates_ignore_extra_fields_and_do_not_require_adjacency) (order=['alpha', 'alpha', 'alpha', 'beta', 'alpha'])",
+            "test_empty_window_still_validates_records_and_conflicts (test_ledger.AggregateTests.test_empty_window_still_validates_records_and_conflicts) (records=[{'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 12}, {'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 11}])",
+            "test_half_open_window_with_negative_timestamps (test_ledger.AggregateTests.test_half_open_window_with_negative_timestamps)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='tenant', value='')",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='tenant', value=None)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='tenant', value=7)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='event_id', value='')",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='event_id', value=None)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='event_id', value=7)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='at', value=True)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='at', value=False)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='at', value=4.0)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='at', value='4')",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='at', value=None)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='kind', value='SALE')",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='kind', value='other')",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='kind', value='')",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='kind', value=None)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='kind', value=1)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='amount', value=0)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='amount', value=-1)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='amount', value=True)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='amount', value=False)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='amount', value=11.0)",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='amount', value='11')",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='amount', value=None)",
+            "test_missing_required_fields_are_rejected_even_outside_window (test_ledger.AggregateTests.test_missing_required_fields_are_rejected_even_outside_window) (missing='tenant')",
+            "test_missing_required_fields_are_rejected_even_outside_window (test_ledger.AggregateTests.test_missing_required_fields_are_rejected_even_outside_window) (missing='event_id')",
+            "test_missing_required_fields_are_rejected_even_outside_window (test_ledger.AggregateTests.test_missing_required_fields_are_rejected_even_outside_window) (missing='at')",
+            "test_missing_required_fields_are_rejected_even_outside_window (test_ledger.AggregateTests.test_missing_required_fields_are_rejected_even_outside_window) (missing='kind')",
+            "test_missing_required_fields_are_rejected_even_outside_window (test_ledger.AggregateTests.test_missing_required_fields_are_rejected_even_outside_window) (missing='amount')",
+            "test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals (test_ledger.AggregateTests.test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals) (order=[8, 3, 1, 2, 7, 6, 5])",
+            "test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals (test_ledger.AggregateTests.test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals) (order=[5, 6, 7, 2, 1, 3, 8])"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "boolean_amount": {
+          "tests_run": 11,
+          "failures": [
+            "test_boolean_duplicate_is_validated_before_deduplication (test_ledger.AggregateTests.test_boolean_duplicate_is_validated_before_deduplication) (field='amount', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 1, 'kind': 'sale', 'amount': 1})",
+            "test_boolean_duplicate_is_validated_before_deduplication (test_ledger.AggregateTests.test_boolean_duplicate_is_validated_before_deduplication) (field='amount', first={'tenant': 'alpha', 'event_id': 'e1', 'at': 1, 'kind': 'sale', 'amount': True})",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='amount', value=True)"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "zero_amount": {
+          "tests_run": 11,
+          "failures": [
+            "test_empty_window_still_validates_records_and_conflicts (test_ledger.AggregateTests.test_empty_window_still_validates_records_and_conflicts) (records=[{'tenant': 'alpha', 'event_id': 'e1', 'at': 4, 'kind': 'sale', 'amount': 0}])",
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='amount', value=0)"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "negative_amount": {
+          "tests_run": 11,
+          "failures": [
+            "test_invalid_field_values_are_rejected_even_outside_window (test_ledger.AggregateTests.test_invalid_field_values_are_rejected_even_outside_window) (field='amount', value=-1)"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "invalid_window": {
+          "tests_run": 11,
+          "failures": [
+            "test_invalid_windows_are_rejected_even_for_empty_input (test_ledger.AggregateTests.test_invalid_windows_are_rejected_even_for_empty_input) (start=2, end=1)",
+            "test_invalid_windows_are_rejected_even_for_empty_input (test_ledger.AggregateTests.test_invalid_windows_are_rejected_even_for_empty_input) (start=True, end=10)",
+            "test_invalid_windows_are_rejected_even_for_empty_input (test_ledger.AggregateTests.test_invalid_windows_are_rejected_even_for_empty_input) (start=-10, end=True)",
+            "test_invalid_windows_are_rejected_even_for_empty_input (test_ledger.AggregateTests.test_invalid_windows_are_rejected_even_for_empty_input) (start=False, end=10)",
+            "test_invalid_windows_are_rejected_even_for_empty_input (test_ledger.AggregateTests.test_invalid_windows_are_rejected_even_for_empty_input) (start=-10, end=False)",
+            "test_invalid_windows_are_rejected_even_for_empty_input (test_ledger.AggregateTests.test_invalid_windows_are_rejected_even_for_empty_input) (start=0.0, end=10)",
+            "test_invalid_windows_are_rejected_even_for_empty_input (test_ledger.AggregateTests.test_invalid_windows_are_rejected_even_for_empty_input) (start=-10, end=0.0)",
+            "test_invalid_windows_are_rejected_even_for_empty_input (test_ledger.AggregateTests.test_invalid_windows_are_rejected_even_for_empty_input) (start='0', end=10)",
+            "test_invalid_windows_are_rejected_even_for_empty_input (test_ledger.AggregateTests.test_invalid_windows_are_rejected_even_for_empty_input) (start=-10, end='0')",
+            "test_invalid_windows_are_rejected_even_for_empty_input (test_ledger.AggregateTests.test_invalid_windows_are_rejected_even_for_empty_input) (start=None, end=10)",
+            "test_invalid_windows_are_rejected_even_for_empty_input (test_ledger.AggregateTests.test_invalid_windows_are_rejected_even_for_empty_input) (start=-10, end=None)"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "merge_tenants": {
+          "tests_run": 11,
+          "failures": [
+            "test_calls_have_no_shared_state_and_return_new_dictionaries (test_ledger.AggregateTests.test_calls_have_no_shared_state_and_return_new_dictionaries)",
+            "test_duplicates_ignore_extra_fields_and_do_not_require_adjacency (test_ledger.AggregateTests.test_duplicates_ignore_extra_fields_and_do_not_require_adjacency) (order=['alpha', 'beta', 'alpha', 'alpha', 'alpha'])",
+            "test_duplicates_ignore_extra_fields_and_do_not_require_adjacency (test_ledger.AggregateTests.test_duplicates_ignore_extra_fields_and_do_not_require_adjacency) (order=['alpha', 'alpha', 'alpha', 'beta', 'alpha'])",
+            "test_half_open_window_with_negative_timestamps (test_ledger.AggregateTests.test_half_open_window_with_negative_timestamps)",
+            "test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals (test_ledger.AggregateTests.test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals) (order=[8, 3, 1, 2, 7, 6, 5])",
+            "test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals (test_ledger.AggregateTests.test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals) (order=[5, 6, 7, 2, 1, 3, 8])"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        },
+        "extra_fields_identity": {
+          "tests_run": 11,
+          "failures": [],
+          "errors": [
+            "test_duplicates_ignore_extra_fields_and_do_not_require_adjacency (test_ledger.AggregateTests.test_duplicates_ignore_extra_fields_and_do_not_require_adjacency) (order=['alpha', 'beta', 'alpha', 'alpha', 'alpha'])",
+            "test_duplicates_ignore_extra_fields_and_do_not_require_adjacency (test_ledger.AggregateTests.test_duplicates_ignore_extra_fields_and_do_not_require_adjacency) (order=['alpha', 'alpha', 'alpha', 'beta', 'alpha'])"
+          ],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": false,
+          "manual_review": "ValueError raised on valid input that must return a dictionary; behavioral contract violation."
+        },
+        "empty_result": {
+          "tests_run": 11,
+          "failures": [
+            "test_calls_have_no_shared_state_and_return_new_dictionaries (test_ledger.AggregateTests.test_calls_have_no_shared_state_and_return_new_dictionaries)",
+            "test_duplicates_ignore_extra_fields_and_do_not_require_adjacency (test_ledger.AggregateTests.test_duplicates_ignore_extra_fields_and_do_not_require_adjacency) (order=['alpha', 'beta', 'alpha', 'alpha', 'alpha'])",
+            "test_duplicates_ignore_extra_fields_and_do_not_require_adjacency (test_ledger.AggregateTests.test_duplicates_ignore_extra_fields_and_do_not_require_adjacency) (order=['alpha', 'alpha', 'alpha', 'beta', 'alpha'])",
+            "test_half_open_window_with_negative_timestamps (test_ledger.AggregateTests.test_half_open_window_with_negative_timestamps)",
+            "test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals (test_ledger.AggregateTests.test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals) (order=[8, 3, 1, 2, 7, 6, 5])",
+            "test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals (test_ledger.AggregateTests.test_sales_refunds_and_tenant_identity_keep_zero_and_negative_totals) (order=[5, 6, 7, 2, 1, 3, 8])"
+          ],
+          "errors": [],
+          "skipped": [],
+          "expected_failures": [],
+          "unexpected_successes": [],
+          "passed": false,
+          "status": "completed",
+          "assertion_detected": true
+        }
+      }
+    }
+  },
+  "small_edit": {
+    "exact_expected_file": true,
+    "only_file": "README.md",
+    "tests_added": false,
+    "dependencies_added": false
+  }
+}

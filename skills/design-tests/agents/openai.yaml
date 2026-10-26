@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Tests"
+  short_description: "Choose tests that expose meaningful failures"
+  default_prompt: "Use $design-tests to plan and run focused checks for this task within my time budget."
